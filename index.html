@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+
+	<script type="text/javascript" src="render/3D/KUtils.js"></script>
+	<script type="text/javascript" src="render/libs/three.js"></script>
+	<script type="text/javascript" src="render/utils/Stats.js"></script>
+	<script type="text/javascript" src="render/utils/TrackballControls.js"></script>
+	<script type="text/javascript" src="render/drawings/KHPRender.min.js"></script>
+
+	<style>
+		html,body{
+			overflow:auto;
+			margin:0;
+			padding:0;
+			background-color: white
+		}
+		#graph-info{
+			position: absolute;
+			z-index: 999,
+			top:0;
+			right:0;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="graph-info">Info: </div>
+	<script type="text/javascript">
+	function getUrlVars() {
+          var vars = [],
+          hash;
+          var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+          for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+          }
+          return vars;
+        }
+		var params = getUrlVars();
+		
+		var drawing  = new KHPRender();
+  		setTimeout(drawing.addData.bind(drawing,parseInt(params['rows']),parseInt(params['cols'])), 1);
+        
+	</script>
+</body>
+</html>

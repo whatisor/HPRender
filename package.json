@@ -1,0 +1,11 @@
+{
+  "name": "Door",
+  "description": "vn.karoshi",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*"
+  },
+  "scripts":{ 
+  	"start": "node index.js"
+  	 }
+}
